@@ -1,0 +1,27 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.test.shopside"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.test.shopside"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.test.shopside"
+        },
+        "cordova-plugin-bluetoothle": {
+            "PACKAGE_NAME": "com.test.shopside"
+        },
+        "org.jshybugger.cordova": {
+            "PACKAGE_NAME": "com.test.shopside"
+        }
+    },
+    "dependent_plugins": {}
+}
