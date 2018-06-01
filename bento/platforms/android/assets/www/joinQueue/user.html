@@ -6,17 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>領取號碼牌</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
-    <link rel="stylesheet" href="../css/materialize.min.css" />
-    <script src="../js/materialize.min.js"></script>
-    <link rel="stylesheet" href="../css/sweetalert2.css">
-    <script src="../js/sweetalert2.all.js"></script>
-    <script src="../js/firebase.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.7/sweetalert2.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.7/sweetalert2.all.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
     <script>
       $(document).ready(function () {
             $('select').material_select();
       });
     </script>
+    <style>
+        div{
+            position: relative;
+            text-align: center;
+
+        }
+        .sp{
+            position: absolute;
+            top:30%;
+            left:40%;
+            font-size: 200px;
+        }
+    </style>
 </head>
 <body>
     <script>
@@ -33,8 +46,8 @@
     </script>
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo">領取號碼牌</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <a href="#" class="brand-logo" >領取號碼牌</a>
+            <!-- <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li>
                     <a href="sass.html">Sass</a>
                 </li>
@@ -44,22 +57,24 @@
                 <li>
                     <a href="collapsible.html">JavaScript</a>
                 </li>
-            </ul>
+            </ul> -->
         </div>
     </nav>
     <div id="app" ></div>
     <script>
         if (localStorage.getItem('token') !== null)
         {
-            var token = JSON.parse(localStorage.getItem("token"));
+            let token = JSON.parse(localStorage.getItem("token"));
+            let str = '<div class="container"><div class="row">';
+            // str += '<h2>' + token.reservationID +'</h2><img src="tag.svg" alt="" width="100%!important" height="100%!important">';
+            str += '<span class="sp">' + token.reservationID + '</span><img src="tag.svg" alt="" width="80%!important" height="80%!important">';                    
 
-            var str = '<h2>這裡會顯示領到的號碼</h2>';
-            str += '<h2>'+token.reservationID+'</h2>';
+            str += '</div></div>';
             $('#app').append(str);
         }
         else 
         {
-            var str = '';
+            let str = '<div class="container">';
             str += '<div class="row">';
             str += '<form class="col s12">';
             str += '<div class="row">';
@@ -85,7 +100,7 @@
             str += '</div>';
             str += '<button class="btn waves-effect waves-light right" id="submit_btn">Submit';
             str += '<i class="material-icons right">send</i></button>';
-            str += '</div></form></div>';
+            str += '</div></form></div></div>';
             $('#app').append(str);
         
         }
