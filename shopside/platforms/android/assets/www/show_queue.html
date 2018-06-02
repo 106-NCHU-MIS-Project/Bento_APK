@@ -77,6 +77,12 @@
             left:40%;
             font-size: 100px;
         }
+        .sp.emp{
+            position: absolute;
+            top:35%;
+            left:40%;
+            font-size: 40px;
+        }
     </style>
 </head>
 
@@ -130,8 +136,10 @@
             for(var i = 1; i <= 5; i++){
                 if (obj[i+'P'] == undefined)
                 {
-                    $('#show_'+i+'P').append('<div class="token "><span>暫無人排隊</span></div>');
-                    $('#p'+i+'_show').append('暫無人排隊');
+                    $('#show_' + i + 'P').empty();
+                    $('#p' + i + '_show').empty();
+                    $('#show_'+i+'P').append('<span class="sp emp">暫無人</br>排隊</span><img src="tag.svg" alt="" width="100%!important" height="100%!important">');
+                    $('#p'+i+'_show').append('<div class="row"><span style="font-size:30px">無人排隊</span></div>');
 
                 }
                 else

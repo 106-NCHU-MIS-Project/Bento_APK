@@ -63,7 +63,7 @@
     </script>
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo">&nbsp餐廳桌管理</a>
+            <a href="#" class="brand-logo">&nbsp餐廳號碼牌管理</a>
             <ul id="nav-mobile" class="right">
                 <!-- <!-- <li>
                     <a href="sass.html">Sass</a>
@@ -207,6 +207,8 @@
 
         queueRef = database.ref("/Queue");
         queueRef.on("value", function (snapshot) {
+            $('#queue').empty();
+            
             var obj = snapshot.val();
             var str = "";
             $.each(obj, function (key, value) {
@@ -678,6 +680,7 @@
                 $('#modal2').modal('open');
         }
         function calling(link) {
+            
                 var tokenRef = database.ref("Queue/" + link);
                 var callRef = database.ref("Queue/call");
                 callRef.once('value', function (snapshot) {
@@ -687,7 +690,8 @@
                     // $('#'+ key_value[0]+count).css();
                     callRef.set(obj);
                 });
-
+                tokenRef.remove();
+                $('#modal2').modal('close');
                 // 要加上 timeout
 
                 // tokenRef.set({});

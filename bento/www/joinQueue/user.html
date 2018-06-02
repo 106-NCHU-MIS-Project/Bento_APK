@@ -15,6 +15,7 @@
     <script>
       $(document).ready(function () {
             $('select').material_select();
+            $('.modal').modal();
       });
     </script>
     <style>
@@ -27,7 +28,7 @@
             position: absolute;
             top:25%;
             left:35%;
-            font-size: 150px;
+            font-size: 100px;
         }
     </style>
 </head>
@@ -61,7 +62,27 @@
         </div>
     </nav>
     <div id="app" ></div>
+    <div id="modal1" class="modal">
+        <div id="modal1-content" class="modal-content">
+        <div class="row">
+            <!-- <img src="" alt=""> -->
+            
+            <div style="width:50%;float:left">
+                <img src="./cele.svg" width="80%" height="80%">
+            </div>
+            <div style="width:50%;float:right">
+                <span>請於10分鐘內至店家報到，並出示號碼牌</span>
+                <span style="color:red">請注意：若超出時限，店家有權取消排隊資格</span>
+                
+            </div>
+            
+        </div>
+        <!-- <div class="modal-footer">
+            <a href="#!" id="edit_submit" class="modal-action modal-close waves-effect waves-green btn">更新</a>
+        </div> -->
+    </div>
     <script>
+        var queueRef = database.ref("Queue");
         if (localStorage.getItem('token') !== null)
         {
             let token = JSON.parse(localStorage.getItem("token"));
@@ -71,6 +92,16 @@
 
             str += '</div></div>';
             $('#app').append(str);
+            var cc = 0;
+            // console.log(token.reservationNumPeople + "/" + token.reservationID);
+            queueRef.child(token.reservationNumPeople+"/"+token.reservationID).on("value", function(){
+                if (cc == 0){cc++;}
+                else 
+                {
+                    $('#modal1').modal('open');
+                }
+
+            });
         }
         else 
         {
@@ -105,7 +136,6 @@
         
         }
         var counter = 0;
-        var queueRef = database.ref("Queue");
         queueRef.child('counter').on('value', function(snapshot){
             counter = snapshot.val();
         });
