@@ -23,16 +23,16 @@
     </script>
     <style>
         :root{
-            --token-width: 100px;
-            --token-height: 100px; 
+            --token-width: 80px;
+            --token-height: 80px; 
             
         }
         body{
             background-color: #ffcc80
         }
         .token{
-            width: 18%!important;
-            height: 20%!important;
+            width: var(--token-width)!important;
+            height: var(--token-height)!important;
             /* background-color: #bbdefb; */
             /* border-radius: 100%; */
             text-align: center;
@@ -110,7 +110,7 @@
                                     return;
                                 if (k == 'available')
                                     return;
-                                tmp += '<div class="col s12 m3 l3" onclick="javascript:edit(\''+key+'/'+v.tableNum+'\')">';
+                                tmp += '<div class="col s10 m4 l3" onclick="javascript:edit(\''+key+'/'+v.tableNum+'\')">';
                                 if (v.tableStatus == 'free')
                                     tmp += '<div class="card green accent-3">';
                                 else if (v.tableStatus == 'busy')
@@ -132,7 +132,7 @@
                                     return;
                                 if (k == 'available')
                                     return;
-                                tmp += '<div class="col s12 m3 l3" onclick="javascript:edit(\'' + key + '/' + v.tableNum +'\')">';
+                                tmp += '<div class="col s10 m4 l3" onclick="javascript:edit(\'' + key + '/' + v.tableNum +'\')">';
                                 if (v.tableStatus == 'free')
                                     tmp += '<div class="card green accent-3">';
                                 else if (v.tableStatus == 'busy')
@@ -154,7 +154,7 @@
                                     return;
                                 if (k == 'available')
                                     return;
-                                tmp += '<div class="col s12 m3 l3" onclick="javascript:edit(\'' + key + '/' + v.tableNum +'\')">';
+                                tmp += '<div class="col s10 m4 l3" onclick="javascript:edit(\'' + key + '/' + v.tableNum +'\')">';
                                 if (v.tableStatus == 'free')
                                     tmp += '<div class="card green accent-3">';
                                 else if (v.tableStatus == 'busy')
@@ -176,7 +176,7 @@
                                     return;
                                 if (k == 'available')
                                     return;
-                                tmp += '<div class="col s12 m3 l3" onclick="javascript:edit(\'' + key + '/' + v.tableNum +'\')">';
+                                tmp += '<div class="col s10 m4 l3" onclick="javascript:edit(\'' + key + '/' + v.tableNum +'\')">';
                                 if (v.tableStatus == 'free')
                                     tmp += '<div class="card green accent-3">';
                                 else if (v.tableStatus == 'busy')
@@ -216,7 +216,7 @@
                     return;
                 if (key == 'null')
                     return;
-                str += '<h3>' + key + '</h3>';
+                str += '<h3>' + key+" 號碼牌"+ '</h3>';
                 str += '<div class="row" id="'+key+'_queue">'
                 // console.log(Object.keys(value));
                 var count = 0;
