@@ -231,7 +231,12 @@
                         $("#" + order_id +"cancel").show();
 
                     }
-
+                    else {
+                        $("#" + order_id + "reject").hide();
+                        $("#" + order_id + "accept").hide();
+                        $("#" + order_id + "delivery").hide();
+                        $("#" + order_id + "cancel").hide();
+                    }
                 });
                 var emptyIcon = '<img src="./image/package.svg" style="margin-top:10%;margin-left:30%;" width="40%" height="40%" alt="">';
                 if($('#list_waiting').children().length == 0)
