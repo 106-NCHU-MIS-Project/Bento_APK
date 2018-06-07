@@ -38,6 +38,20 @@ module.exports = [
         "file": "plugins/org.jshybugger.cordova/www/jsHybuggerLoader.js",
         "pluginId": "org.jshybugger.cordova",
         "runs": true
+    },
+    {
+        "id": "cordova-plugin-geolocation.geolocation",
+        "file": "plugins/cordova-plugin-geolocation/www/android/geolocation.js",
+        "pluginId": "cordova-plugin-geolocation",
+        "clobbers": [
+            "navigator.geolocation"
+        ]
+    },
+    {
+        "id": "cordova-plugin-geolocation.PositionError",
+        "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
+        "pluginId": "cordova-plugin-geolocation",
+        "runs": true
     }
 ];
 module.exports.metadata = 
@@ -47,7 +61,9 @@ module.exports.metadata =
     "cordova-plugin-device": "2.0.2",
     "cordova-plugin-network-information": "2.0.1",
     "cordova-plugin-bluetoothle": "4.4.3",
-    "org.jshybugger.cordova": "4.5.9"
+    "org.jshybugger.cordova": "4.5.9",
+    "cordova-plugin-compat": "1.2.0",
+    "cordova-plugin-geolocation": "2.4.3"
 };
 // BOTTOM OF METADATA
 });

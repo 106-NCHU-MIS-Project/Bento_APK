@@ -18,6 +18,9 @@
         <param name="android-package" value="org.jshybugger.cordova.JsHybuggerPlugin" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="Geolocation">
+        <param name="android-package" value="org.apache.cordova.geolocation.Geolocation" />
+    </feature>
     <name>ShopSide</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.

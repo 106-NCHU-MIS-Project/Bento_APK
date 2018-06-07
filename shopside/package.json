@@ -12,7 +12,9 @@
     "dependencies": {
         "cordova-android": "^6.2.3",
         "cordova-plugin-bluetoothle": "^4.4.3",
+        "cordova-plugin-compat": "^1.2.0",
         "cordova-plugin-device": "^2.0.2",
+        "cordova-plugin-geolocation": "^2.4.3",
         "cordova-plugin-jshybugger": "git+https://github.com/jsHybugger/cordova-plugin-jshybugger.git",
         "cordova-plugin-network-information": "^2.0.1",
         "cordova-plugin-whitelist": "^1.3.3",
@@ -24,7 +26,8 @@
             "cordova-plugin-device": {},
             "cordova-plugin-network-information": {},
             "cordova-plugin-bluetoothle": {},
-            "org.jshybugger.cordova": {}
+            "org.jshybugger.cordova": {},
+            "cordova-plugin-geolocation": {}
         },
         "platforms": [
             "android"

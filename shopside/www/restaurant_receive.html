@@ -224,7 +224,10 @@
                     str += '<a href="#!" class="status_group modal-action modal-close waves-effect waves-green btn right" id="' + order_id +'accept" onclick="javascript:setOrderStatus(\'' + order_id + '\', 2)">接受訂單</a>';
                     str += '</div></li>';
                     $(list_append_place).append(str);
-                    if (childSnap.val().OrderStatus == 2) {
+                    if (childSnap.val().OrderStatus == 1) {
+
+                    }
+                    else if (childSnap.val().OrderStatus == 2) {
                         $("#"+ order_id +"reject").hide();
                         $("#" + order_id +"accept").hide();
                         $("#" + order_id +"delivery").show();
